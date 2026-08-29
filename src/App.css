@@ -2317,3 +2317,254 @@ img {
     font-size: 12px;
   }
 }
+
+/* =========================================================
+   FINAL HERO RESPONSIVE FIX
+   Desktop layout above remains unchanged.
+   Mobile + tablet: image first, then hero text.
+========================================================= */
+
+/* TABLET */
+@media (min-width: 761px) and (max-width: 1100px) {
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    background: var(--bg);
+  }
+
+  .hero-image {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    flex: 0 0 auto;
+    background-size: contain;
+    background-position: center top;
+    background-color: #0d0e0b;
+    transform: none;
+  }
+
+  .hero-overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(13, 14, 11, 0.12) 0%,
+        rgba(13, 14, 11, 0.28) 55%,
+        rgba(13, 14, 11, 0.58) 100%
+      );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 55px 0 100px;
+  }
+
+  .hero-role {
+    margin-bottom: 28px;
+  }
+
+  .hero-hello {
+    margin-bottom: 10px;
+  }
+
+  .hero-description {
+    margin-top: 35px;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+
+  .scroll-explore {
+    bottom: 28px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 760px) {
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    background: var(--bg);
+    overflow: hidden;
+  }
+
+  /* Image is now a real first block instead of sitting behind the text. */
+  .hero-image {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    flex: 0 0 auto;
+    background-size: contain;
+    background-position: center top;
+    background-color: #0d0e0b;
+    transform: none;
+  }
+
+  /* Overlay belongs only to the image. */
+  .hero-overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(13, 14, 11, 0.08) 0%,
+        rgba(13, 14, 11, 0.22) 55%,
+        rgba(13, 14, 11, 0.52) 100%
+      );
+  }
+
+  /* Text starts AFTER the complete image. */
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    width: 88%;
+    max-width: 88%;
+    margin: 0 auto;
+    padding: 42px 0 95px;
+  }
+
+  .hero-role {
+    margin-bottom: 28px;
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    line-height: 1.8;
+  }
+
+  .hero-hello {
+    margin: 0 0 9px;
+    font-size: 17px;
+    line-height: 1.4;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(49px, 14.5vw, 66px);
+    line-height: 0.92;
+    letter-spacing: -2.5px;
+    overflow-wrap: normal;
+    white-space: normal;
+  }
+
+  .hero-description {
+    max-width: 100%;
+    margin-top: 30px;
+    font-size: 10px;
+    line-height: 1.85;
+  }
+
+  .hero-tags {
+    max-width: 100%;
+    margin-top: 20px;
+    font-size: 8px;
+    line-height: 2;
+    letter-spacing: 1px;
+  }
+
+  .hero-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 25px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .scroll-explore {
+    right: 7px;
+    bottom: 22px;
+    font-size: 6px;
+    letter-spacing: 2px;
+  }
+
+  /* Keep every other section inside the viewport. */
+  .section,
+  .contact {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .about-grid,
+  .skills-grid,
+  .certificate-grid {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-intro p,
+  .about-text p,
+  .section-intro,
+  .project-description,
+  .project-tech,
+  .experience-item div > p:last-child,
+  .education-item p,
+  .contact-text {
+    overflow-wrap: break-word;
+  }
+}
+
+/* VERY SMALL PHONES */
+@media (max-width: 430px) {
+  .hero-content {
+    width: 88%;
+    max-width: 88%;
+    padding-top: 36px;
+    padding-bottom: 88px;
+  }
+
+  .hero-role {
+    margin-bottom: 25px;
+    font-size: 7px;
+    letter-spacing: 2.2px;
+  }
+
+  .hero-hello {
+    font-size: 16px;
+  }
+
+  .hero h1 {
+    font-size: clamp(46px, 14vw, 60px);
+    letter-spacing: -2.2px;
+  }
+
+  .hero-description {
+    margin-top: 27px;
+    font-size: 9.5px;
+  }
+
+  .hero-tags {
+    font-size: 7.5px;
+  }
+}
+
