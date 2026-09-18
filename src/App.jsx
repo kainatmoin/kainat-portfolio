@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import "./App.css";
 
 const projects = [
@@ -76,6 +77,20 @@ const projects = [
     details:
       "Uses a device camera for real-time pose estimation and exercise analysis, with voice guidance and real-time movement feedback. Final Year Project is currently ongoing.",
   },
+  {
+    number: "07",
+    category: "AI / COMPUTER VISION",
+    title: "AI Civic Guardian",
+    description:
+      "AI-powered civic issue reporting platform using computer vision, GPS location capture and structured report submission.",
+    tech: "Python · Streamlit · YOLO · PyTorch · OpenCV · SQLite",
+    details:
+      "Built a civic issue reporting system using a fine-tuned YOLO model to detect 7 public infrastructure problems: potholes, road cracks, open manholes, fallen trees, garbage, broken streetlights and water leakage. Integrated AI confidence scores, browser GPS capture and SQLite-based report submission.",
+    github:
+      "https://github.com/kainatmoin/AI-Civic-Guardian",
+    demo:
+      "https://ai-civic-guardian-kryjzuyolzphxv7feqhxy4.streamlit.app/",
+  },
 ];
 
 const certificates = [
@@ -137,6 +152,12 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [activeProject, setActiveProject] = useState(null);
 
+  const { scrollYProgress } = useScroll();
+  const heroImageY = useTransform(scrollYProgress, [0, 0.35], [0, -90]);
+  const heroImageScale = useTransform(scrollYProgress, [0, 0.35], [1.04, 1]);
+  const heroContentY = useTransform(scrollYProgress, [0, 0.28], [0, 70]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
@@ -153,19 +174,81 @@ function App() {
     };
   }, [loading]);
 
+  useEffect(() => {
+    if (loading) return;
+
+    const selectors = [
+      ".section-heading",
+      ".skills-grid .skill-card",
+      ".project-card",
+      ".experience-item",
+      ".education-item",
+      ".certificate-card",
+      ".contact-content",
+      ".contact-links",
+      "footer",
+    ];
+
+    const elements = document.querySelectorAll(selectors.join(","));
+    elements.forEach((element) => element.classList.add("reveal-on-scroll"));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, [loading]);
+
   if (loading) {
     return (
-      <div className="loader">
-        <div className="loader-inner">
-          <span className="loader-name">Kainat Moin</span>
+      <motion.div
+        className="loader"
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        <motion.div
+          className="loader-inner"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <motion.span
+            className="loader-name"
+            initial={{ opacity: 0, y: 18, letterSpacing: "8px" }}
+            animate={{ opacity: 1, y: 0, letterSpacing: "-2px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            Kainat Moin
+          </motion.span>
 
-          <span className="loader-role">
+          <motion.span
+            className="loader-role"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.18, duration: 0.6 }}
+          >
             AI &amp; MACHINE LEARNING ENGINEER
-          </span>
+          </motion.span>
 
-          <div className="loader-line"></div>
-        </div>
-      </div>
+          <motion.div
+            className="loader-line"
+            initial={{ width: 0 }}
+            animate={{ width: "80px" }}
+            transition={{ delay: 0.25, duration: 0.65, ease: "easeOut" }}
+          />
+        </motion.div>
+      </motion.div>
     );
   }
 
@@ -173,7 +256,12 @@ function App() {
     <main>
       {/* ================= NAVIGATION ================= */}
 
-      <header className="navbar">
+      <motion.header
+        className="navbar"
+        initial={{ opacity: 0, y: -18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.05, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      >
         <a href="#home" className="logo">
           MY <span>PORTFOLIO.</span>
         </a>
@@ -188,15 +276,32 @@ function App() {
           <a href="#certificates">Certificates</a>
           <a href="#contact">Contact</a>
         </nav>
-      </header>
+      </motion.header>
 
       {/* ================= HERO ================= */}
 
       <section className="hero" id="home">
-        <div className="hero-image"></div>
-        <div className="hero-overlay"></div>
+        <motion.div
+          className="hero-image"
+          style={{ y: heroImageY, scale: heroImageScale }}
+          initial={{ opacity: 0, scale: 1.08 }}
+          animate={{ opacity: 1, scale: 1.04 }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+        />
+        <motion.div
+          className="hero-overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.15 }}
+        />
 
-        <div className="hero-content">
+        <motion.div
+          className="hero-content"
+          style={{ y: heroContentY, opacity: heroOpacity }}
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+        >
           <p className="eyebrow hero-role">
             AI &amp; MACHINE LEARNING ENGINEER
           </p>
@@ -231,12 +336,19 @@ function App() {
               Download CV
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        <a href="#about" className="scroll-explore">
+        <motion.a
+          href="#about"
+          className="scroll-explore"
+          initial={{ opacity: 0, x: 15 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1.15, duration: 0.7 }}
+          whileHover={{ x: -4 }}
+        >
           <span>SCROLL TO EXPLORE</span>
           <i>↓</i>
-        </a>
+        </motion.a>
       </section>
 
       {/* ================= ABOUT ================= */}
@@ -416,13 +528,19 @@ function App() {
       {/* ================= PROJECT MODAL ================= */}
 
       {activeProject && (
-        <div
+        <motion.div
           className="project-modal"
           onClick={() => setActiveProject(null)}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
         >
-          <div
+          <motion.div
             className="project-modal-box"
             onClick={(event) => event.stopPropagation()}
+            initial={{ opacity: 0, y: 35, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
           >
             <button
               className="modal-close"
@@ -463,8 +581,8 @@ function App() {
                 </a>
               )}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       )}
 
       {/* ================= EXPERIENCE ================= */}
