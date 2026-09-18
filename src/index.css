@@ -2,31 +2,22 @@ html,
 body,
 #root {
   margin: 0;
-
   width: 100%;
-
   min-height: 100%;
 }
 
 html {
   scroll-behavior: smooth;
-
   background: #10110d;
 }
 
 body {
   margin: 0;
-
   min-width: 320px;
-
   background: #10110d;
-
   color: #f0eee4;
-
   -webkit-font-smoothing: antialiased;
-
   -moz-osx-font-smoothing: grayscale;
-
   text-rendering: optimizeLegibility;
 }
 
@@ -36,7 +27,6 @@ body {
 
 ::selection {
   background: rgba(179, 170, 108, 0.35);
-
   color: #ffffff;
 }
 
