@@ -5,30 +5,46 @@ import "./App.css";
 const projects = [
   {
     number: "01",
-    category: "AI / MACHINE LEARNING",
-    title: "Plant Disease Classification",
+    category: "AI / DOCUMENT INTELLIGENCE · WOMEN TECH QUEST 2026",
+    title: "Utility Bill Decoder",
     description:
-      "Image-based plant disease classification system for 38 classes using CNN and Transfer Learning.",
-    tech: "TensorFlow · Keras · OpenCV · MobileNetV2",
+      "AI-powered utility bill decoder built for Women Tech Quest 2026, organized by 10Pearls. Extracts structured information from K-Electric, LESCO and IESCO bills.",
     details:
-      "Developed CNN from scratch and MobileNetV2 models, including frozen and fine-tuned versions. Applied image preprocessing and augmentation and achieved 92.06% accuracy with the fine-tuned MobileNetV2 model.",
+      "Built an AI-powered tool to extract billing data from K-Electric, LESCO, and IESCO bills. Integrated Google Gemini for bill-based question answering, data validation, and privacy-focused PII redaction.",
+    tech:
+      "Python · Streamlit · Google Gemini · Multimodal AI · Data Validation",
     github:
-      "https://github.com/kainatmoin/Plant-Disease-Classification-Using-Deep-Learning.git",
+      "https://github.com/kainatmoin/Women-Teach-Quest-10pearls-Utility-Bill-Decoder",
+    demo:
+      "https://women-teach-quest-10pearls-utility-bill-decoder-aah5dxy6cmwbcw.streamlit.app/",
   },
   {
     number: "02",
-    category: "AI / COMPUTER VISION",
-    title: "Waste Classification using Image Clustering",
+    category: "AI / COMPUTER VISION · ALIBABA CLOUD AI HACKATHON PAKISTAN 2026",
+    title: "AI Civic Guardian",
     description:
-      "Waste classification system using MobileNetV2, PCA and K-Means clustering for 9 waste classes.",
-    tech: "Python · CNN · MobileNetV2 · PCA · K-Means",
+      "AI-powered civic issue reporting platform using computer vision, GPS location capture and structured report submission.",
     details:
-      "Built a prediction pipeline in Google Colab and evaluated clustering performance using Silhouette Score and Davies–Bouldin Index.",
+      "Developed an AI-powered civic issue reporting platform using fine-tuned YOLO for detecting 7 infrastructure issues. Integrated AI image detection, GPS location capture, and structured report submission. Built with Python, Streamlit, PyTorch, YOLO, OpenCV, and SQLite. Collaborated in a team for the hackathon.",
+    tech:
+      "Python · Streamlit · PyTorch · YOLO · OpenCV · SQLite",
     github:
-      "https://github.com/kainatmoin/Smart-Waste-Classification.git",
+      "https://github.com/kainatmoin/AI-Civic-Guardian",
+    demo:
+      "https://ai-civic-guardian-kryjzuyolzphxv7feqhxy4.streamlit.app/",
   },
   {
     number: "03",
+    category: "FINAL YEAR PROJECT · ONGOING",
+    title: "PostPal",
+    description:
+      "Offline AI-powered fitness and rehabilitation assistant for exercise monitoring.",
+    tech: "Python · MediaPipe · OpenCV · TensorFlow Lite · LSTM",
+    details:
+      "Uses a device camera for real-time pose estimation and exercise analysis, with voice guidance and real-time movement feedback. Final Year Project is currently ongoing.",
+  },
+  {
+    number: "04",
     category: "NLP / MACHINE LEARNING",
     title: "Emotion Classifier",
     description:
@@ -40,18 +56,6 @@ const projects = [
       "https://github.com/kainatmoin/Tweet-Emotion-Classifier.git",
     demo:
       "https://aigot-talent-urpxliqh6zzqzwg5gqtbpa.streamlit.app/",
-  },
-  {
-    number: "04",
-    category: "COMPUTER VISION",
-    title: "Human Pose Estimation",
-    description:
-      "Pose estimation and activity classification pipeline for real-time human movement analysis.",
-    tech: "MediaPipe · OpenCV · Python",
-    details:
-      "Detected human body landmarks, calculated knee, hip and shoulder angles and classified Squat, Standing and Transition activities using a rule-based model.",
-    github:
-      "https://github.com/kainatmoin/Human-Pose-Estimation-Activity-Classification.git",
   },
   {
     number: "05",
@@ -68,47 +72,63 @@ const projects = [
   },
   {
     number: "06",
-    category: "FINAL YEAR PROJECT · ONGOING",
-    title: "PostPal",
+    category: "COMPUTER VISION",
+    title: "Human Pose Estimation",
     description:
-      "Offline AI-powered fitness and rehabilitation assistant for exercise monitoring.",
-    tech: "Python · MediaPipe · OpenCV · TensorFlow Lite · LSTM",
+      "Pose estimation and activity classification pipeline for real-time human movement analysis.",
+    tech: "MediaPipe · OpenCV · Python",
     details:
-      "Uses a device camera for real-time pose estimation and exercise analysis, with voice guidance and real-time movement feedback. Final Year Project is currently ongoing.",
+      "Detected human body landmarks, calculated knee, hip and shoulder angles and classified Squat, Standing and Transition activities using a rule-based model.",
+    github:
+      "https://github.com/kainatmoin/Human-Pose-Estimation-Activity-Classification.git",
   },
   {
     number: "07",
-    category: "AI / DOCUMENT INTELLIGENCE · WOMEN TECH QUEST 2026",
-    title: "Utility Bill Decoder",
+    category: "AI / COMPUTER VISION",
+    title: "Waste Classification using Image Clustering",
     description:
-      "AI-powered multimodal tool that extracts structured data from Pakistani electricity bills and answers bill-related questions.",
-    tech:
-      "Python · Streamlit · Google Gemini · Multimodal AI · Data Validation",
+      "Waste classification system using MobileNetV2, PCA and K-Means clustering for 9 waste classes.",
+    tech: "Python · CNN · MobileNetV2 · PCA · K-Means",
     details:
-      "Built for Women Tech Quest 2026, organized by 10Pearls. The pipeline extracts structured billing fields from K-Electric, LESCO and IESCO bills, provides bill-grounded plain-English question answering, validates dates and numeric values, and applies privacy-focused filtering and redaction. Includes a responsive Streamlit interface and batch-processing tools.",
+      "Built a prediction pipeline in Google Colab and evaluated clustering performance using Silhouette Score and Davies–Bouldin Index.",
     github:
-      "https://github.com/kainatmoin/Women-Teach-Quest-10pearls-Utility-Bill-Decoder.git",
-    demo:
-      "https://women-teach-quest-10pearls-utility-bill-decoder-aah5dxy6cmwbcw.streamlit.app/",
+      "https://github.com/kainatmoin/Smart-Waste-Classification.git",
   },
   {
     number: "08",
-    category: "COMPUTER VISION · AI CIVIC GUARDIAN",
-    title: "AI Civic Guardian",
+    category: "AI / MACHINE LEARNING",
+    title: "Plant Disease Classification",
     description:
-      "AI-assisted civic issue reporting platform that detects infrastructure problems from photos and supports GPS-based report submission.",
-    tech:
-      "Python · Streamlit · YOLO · PyTorch · OpenCV · SQLite · GPS",
+      "Image-based plant disease classification system for 38 classes using CNN and Transfer Learning.",
+    tech: "TensorFlow · Keras · OpenCV · MobileNetV2",
     details:
-      "A citizen-first civic reporting MVP built for Alibaba Cloud AI Hackathon Pakistan 2026. It analyzes uploaded images for seven civic issue categories, displays a confidence score, captures user-approved GPS coordinates, accepts a written description, and generates a report ID for submitted issues.",
+      "Developed CNN from scratch and MobileNetV2 models, including frozen and fine-tuned versions. Applied image preprocessing and augmentation and achieved 92.06% accuracy with the fine-tuned MobileNetV2 model.",
     github:
-      "https://github.com/kainatmoin/AI-Civic-Guardian.git",
-    demo:
-      "https://ai-civic-guardian-kryjzuyolzphxv7feqhxy4.streamlit.app/",
+      "https://github.com/kainatmoin/Plant-Disease-Classification-Using-Deep-Learning.git",
   },
 ];
 
 const certificates = [
+  {
+    title: "Women Tech Quest 2026 – Utility Bill Decoder",
+    organization: "10Pearls · 2026",
+    image: "/Certificates/WTQ-2026-10pearls.jpeg",
+  },
+  {
+    title: "AI Civic Guardian",
+    organization: "Alibaba Cloud AI Hackathon Pakistan · 2026",
+    image: "/Certificates/AI_civic _guardian.jpeg",
+  },
+  {
+    title: "AI Got Talent – Certificate of Participation",
+    organization: "FAST NUCES Karachi · 2026",
+    image: "/Certificates/ai-got-talent.jpeg",
+  },
+  {
+    title: "Proxion 2026 – Certificate of Participation",
+    organization: "NED University · 2026",
+    image: "/Certificates/proxion-2026.png",
+  },
   {
     title: "Google AI Professional Certificate",
     organization: "Google & Coursera · 2026",
@@ -120,35 +140,28 @@ const certificates = [
     image: "/Certificates/google-ai-essentials.jpeg",
   },
   {
-    title: "Generative AI Application Developer",
+    title: "Generative AI Application Developer (Top Performer)",
     organization: "NCEAC-HEC & ULEF, USA · 2026",
     image: "/Certificates/generative-ai.jpeg",
   },
   {
-    title: "AI Got Talent",
-    organization:
-      "Certificate of Participation · FAST NUCES Karachi · 2026",
-    image: "/Certificates/ai-got-talent.jpeg",
-  },
-  {
-    title: "Proxion 2026",
-    organization:
-      "Certificate of Participation · NED University · 2026",
-    image: "/Certificates/proxion-2026.png",
-  },
-  {
-    title: "Certificate of Participation in AI",
+    title: "Certificate of Participation in AI (ACIP)",
     organization: "ACIP",
     image: "/Certificates/acip.jpeg",
   },
   {
+    title: "Human Flag Formation – Certificate of Participation",
+    organization: "DUET",
+    image: "/Certificates/human-flag.jpeg",
+  },
+  {
     title: "Web Development Professional Training Program",
-    organization: "Professional Training",
+    organization: "JDC",
     image: "/Certificates/web-development.jpeg",
   },
   {
-    title: "Carbon Footprint Reduction Training",
-    organization: "Training Certificate",
+    title: "Carbon Footprint Reduction Training Program",
+    organization: "Ladies Fund Energy",
     image: "/Certificates/carbon-footprint.jpeg",
   },
   {
@@ -156,26 +169,15 @@ const certificates = [
     organization: "Training / Participation Certificate",
     image: "/Certificates/climate change.jpeg",
   },
-  {
-    title: "Human Flag Formation",
-    organization: "Certificate of Participation",
-    image: "/Certificates/human-flag.jpeg",
-  },
-  {
-    title: "Women Tech Quest 2026 — Utility Bill Decoder",
-    organization: "10Pearls · Build with AI · 2026",
-    image: "/Certificates/WTQ-2026-10pearls.jpeg",
-  },
-  {
-    title: "AI Civic Guardian — Hackathon Certificate",
-    organization: "Alibaba Cloud AI Hackathon Pakistan 2026",
-    image: "/Certificates/AI_civic _guardian.jpeg",
-  },
 ];
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [activeProject, setActiveProject] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const closeMobileMenu = () => setMobileMenuOpen(false);
 
   const { scrollYProgress } = useScroll();
 
@@ -212,19 +214,62 @@ function App() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = loading ? "hidden" : "auto";
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 25);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setActiveProject(null);
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (loading) {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "auto";
+      };
+    }
+
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
 
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [loading]);
+  }, [loading, mobileMenuOpen]);
 
   useEffect(() => {
     if (loading) return;
 
     const selectors = [
       ".section-heading",
+      ".about-intro",
+      ".about-text p",
       ".skills-grid .skill-card",
+      ".projects-heading",
       ".project-card",
       ".experience-item",
       ".education-item",
@@ -330,7 +375,7 @@ function App() {
       {/* ================= NAVIGATION ================= */}
 
       <motion.header
-        className="navbar"
+        className={`navbar ${scrolled ? "navbar-scrolled" : ""} ${mobileMenuOpen ? "nav-open" : ""}`}
         initial={{ opacity: 0, y: -18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -339,25 +384,39 @@ function App() {
           ease: [0.16, 1, 0.3, 1],
         }}
       >
-        <a href="#home" className="logo">
+        <a href="#home" className="logo" onClick={closeMobileMenu}>
           MY <span>PORTFOLIO.</span>
         </a>
 
-        <nav>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
-          <a href="#certificates">Certificates</a>
-          <a href="#contact">Contact</a>
+        <button
+          type="button"
+          className="mobile-nav-toggle"
+          onClick={() => setMobileMenuOpen((prev) => !prev)}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileMenuOpen}
+        >
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
+
+        <nav className={mobileMenuOpen ? "open" : ""}>
+          <a href="#home" onClick={closeMobileMenu}>Home</a>
+          <a href="#about" onClick={closeMobileMenu}>About</a>
+          <a href="#skills" onClick={closeMobileMenu}>Skills</a>
+          <a href="#projects" onClick={closeMobileMenu}>Projects</a>
+          <a href="#experience" onClick={closeMobileMenu}>Experience</a>
+          <a href="#education" onClick={closeMobileMenu}>Education</a>
+          <a href="#certificates" onClick={closeMobileMenu}>Certificates</a>
+          <a href="#contact" onClick={closeMobileMenu}>Contact</a>
         </nav>
       </motion.header>
 
       {/* ================= HERO ================= */}
 
       <section className="hero" id="home">
+        <div className="hero-ambient-glow" aria-hidden="true" />
+
         <motion.div
           className="hero-image"
           style={{
@@ -370,7 +429,9 @@ function App() {
             duration: 1.5,
             ease: [0.16, 1, 0.3, 1],
           }}
-        />
+        >
+          <div className="hero-image-float" />
+        </motion.div>
 
         <motion.div
           className="hero-overlay"
@@ -389,32 +450,63 @@ function App() {
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.9,
-            delay: 0.45,
+            delay: 0.35,
             ease: [0.16, 1, 0.3, 1],
           }}
         >
-          <p className="eyebrow hero-role">
+          <motion.p
+            className="eyebrow hero-role"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          >
             AI &amp; MACHINE LEARNING ENGINEER
-          </p>
+          </motion.p>
 
-          <p className="hero-hello">Hello, I'm</p>
+          <motion.p
+            className="hero-hello"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          >
+            Hello, I'm
+          </motion.p>
 
-          <h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          >
             Kainat <em>Moin</em>
-          </h1>
+          </motion.h1>
 
-          <p className="hero-description">
+          <motion.p
+            className="hero-description"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.72, ease: [0.16, 1, 0.3, 1] }}
+          >
             Building intelligent solutions with
             <br />
             AI, Machine Learning &amp; Computer Vision.
-          </p>
+          </motion.p>
 
-          <p className="hero-tags">
+          <motion.p
+            className="hero-tags"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.84, ease: [0.16, 1, 0.3, 1] }}
+          >
             AI Enthusiast <span>·</span> Developer{" "}
             <span>·</span> Computer Vision
-          </p>
+          </motion.p>
 
-          <div className="hero-actions">
+          <motion.div
+            className="hero-actions"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.96, ease: [0.16, 1, 0.3, 1] }}
+          >
             <a href="#projects" className="primary-btn">
               Explore my work <span>↘</span>
             </a>
@@ -426,7 +518,7 @@ function App() {
             >
               Download CV
             </a>
-          </div>
+          </motion.div>
         </motion.div>
 
         <motion.a
@@ -697,24 +789,43 @@ function App() {
         <div className="experience-list">
           <div className="experience-item">
             <span className="experience-date">
-              FEB 2025 — MAY 2025
+              September 2026 – Present
             </span>
 
             <div>
-              <h3>SEO &amp; Content Writer</h3>
+              <h3>
+                Research Intern — Democracy Discourse Index (DDI) Pakistan
+              </h3>
 
-              <p className="company">Ads-Expert</p>
+              <p className="company">
+                Global Centre for Rehumanising Democracy (GCRD)
+              </p>
 
               <p>
-                Created data-driven SEO content to improve search
-                rankings and engagement.
+                Researching public discourse in Pakistan using structured coding methods. Analyzing comments for empathy, civility, trust, and democratic agency. Contributing to research analysis and policy brief writing.
               </p>
             </div>
           </div>
 
           <div className="experience-item">
             <span className="experience-date">
-              APR 2025 — JUN 2025
+              2026
+            </span>
+
+            <div>
+              <h3>Build with AI — Women Tech Quest 2026</h3>
+
+              <p className="company">10Pearls</p>
+
+              <p>
+                Developed an AI-powered tool to extract data from electricity bills. Integrated Google Gemini for bill-based Q&A, data validation, and privacy protection.
+              </p>
+            </div>
+          </div>
+
+          <div className="experience-item">
+            <span className="experience-date">
+              April 2025 – June 2025
             </span>
 
             <div>
@@ -723,8 +834,23 @@ function App() {
               <p className="company">Groath Digital</p>
 
               <p>
-                Engaged clients through chat platforms to generate and
-                convert leads.
+                Engaged clients via chat platforms to generate and convert leads.
+              </p>
+            </div>
+          </div>
+
+          <div className="experience-item">
+            <span className="experience-date">
+              February 2025 – May 2025
+            </span>
+
+            <div>
+              <h3>SEO &amp; Content Writer</h3>
+
+              <p className="company">Ads-Expert</p>
+
+              <p>
+                Created data-driven SEO content to improve search rankings and engagement.
               </p>
             </div>
           </div>
