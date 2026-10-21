@@ -64,8 +64,7 @@ const projects = [
       "Developed features for resume analysis, LinkedIn integration, interview preparation and intelligent career guidance.",
     github:
       "https://github.com/kainatmoin/NeuroFlow-Proxion2026.git",
-    demo:
-      "https://neuro-flow-psi.vercel.app/",
+    demo: "https://neuro-flow-psi.vercel.app/",
   },
   {
     number: "06",
@@ -79,15 +78,31 @@ const projects = [
   },
   {
     number: "07",
-    category: "AI / COMPUTER VISION",
+    category: "AI / DOCUMENT INTELLIGENCE · WOMEN TECH QUEST 2026",
+    title: "Utility Bill Decoder",
+    description:
+      "AI-powered multimodal tool that extracts structured data from Pakistani electricity bills and answers bill-related questions.",
+    tech:
+      "Python · Streamlit · Google Gemini · Multimodal AI · Data Validation",
+    details:
+      "Built for Women Tech Quest 2026, organized by 10Pearls. The pipeline extracts structured billing fields from K-Electric, LESCO and IESCO bills, provides bill-grounded plain-English question answering, validates dates and numeric values, and applies privacy-focused filtering and redaction. Includes a responsive Streamlit interface and batch-processing tools.",
+    github:
+      "https://github.com/kainatmoin/Women-Teach-Quest-10pearls-Utility-Bill-Decoder.git",
+    demo:
+      "https://women-teach-quest-10pearls-utility-bill-decoder-aah5dxy6cmwbcw.streamlit.app/",
+  },
+  {
+    number: "08",
+    category: "COMPUTER VISION · AI CIVIC GUARDIAN",
     title: "AI Civic Guardian",
     description:
-      "AI-powered civic issue reporting platform using computer vision, GPS location capture and structured report submission.",
-    tech: "Python · Streamlit · YOLO · PyTorch · OpenCV · SQLite",
+      "AI-assisted civic issue reporting platform that detects infrastructure problems from photos and supports GPS-based report submission.",
+    tech:
+      "Python · Streamlit · YOLO · PyTorch · OpenCV · SQLite · GPS",
     details:
-      "Built a civic issue reporting system using a fine-tuned YOLO model to detect 7 public infrastructure problems: potholes, road cracks, open manholes, fallen trees, garbage, broken streetlights and water leakage. Integrated AI confidence scores, browser GPS capture and SQLite-based report submission.",
+      "A citizen-first civic reporting MVP built for Alibaba Cloud AI Hackathon Pakistan 2026. It analyzes uploaded images for seven civic issue categories, displays a confidence score, captures user-approved GPS coordinates, accepts a written description, and generates a report ID for submitted issues.",
     github:
-      "https://github.com/kainatmoin/AI-Civic-Guardian",
+      "https://github.com/kainatmoin/AI-Civic-Guardian.git",
     demo:
       "https://ai-civic-guardian-kryjzuyolzphxv7feqhxy4.streamlit.app/",
   },
@@ -146,6 +161,16 @@ const certificates = [
     organization: "Certificate of Participation",
     image: "/Certificates/human-flag.jpeg",
   },
+  {
+    title: "Women Tech Quest 2026 — Utility Bill Decoder",
+    organization: "10Pearls · Build with AI · 2026",
+    image: "/Certificates/WTQ-2026-10pearls.jpeg",
+  },
+  {
+    title: "AI Civic Guardian — Hackathon Certificate",
+    organization: "Alibaba Cloud AI Hackathon Pakistan 2026",
+    image: "/Certificates/AI_civic _guardian.jpeg",
+  },
 ];
 
 function App() {
@@ -153,10 +178,30 @@ function App() {
   const [activeProject, setActiveProject] = useState(null);
 
   const { scrollYProgress } = useScroll();
-  const heroImageY = useTransform(scrollYProgress, [0, 0.35], [0, -90]);
-  const heroImageScale = useTransform(scrollYProgress, [0, 0.35], [1.04, 1]);
-  const heroContentY = useTransform(scrollYProgress, [0, 0.28], [0, 70]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+
+  const heroImageY = useTransform(
+    scrollYProgress,
+    [0, 0.35],
+    [0, -90]
+  );
+
+  const heroImageScale = useTransform(
+    scrollYProgress,
+    [0, 0.35],
+    [1.04, 1]
+  );
+
+  const heroContentY = useTransform(
+    scrollYProgress,
+    [0, 0.28],
+    [0, 70]
+  );
+
+  const heroOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.2],
+    [1, 0]
+  );
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -189,8 +234,13 @@ function App() {
       "footer",
     ];
 
-    const elements = document.querySelectorAll(selectors.join(","));
-    elements.forEach((element) => element.classList.add("reveal-on-scroll"));
+    const elements = document.querySelectorAll(
+      selectors.join(",")
+    );
+
+    elements.forEach((element) => {
+      element.classList.add("reveal-on-scroll");
+    });
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -201,10 +251,15 @@ function App() {
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -60px 0px",
+      }
     );
 
-    elements.forEach((element) => observer.observe(element));
+    elements.forEach((element) => {
+      observer.observe(element);
+    });
 
     return () => observer.disconnect();
   }, [loading]);
@@ -221,13 +276,27 @@ function App() {
           className="loader-inner"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+          transition={{
+            duration: 0.75,
+            ease: [0.16, 1, 0.3, 1],
+          }}
         >
           <motion.span
             className="loader-name"
-            initial={{ opacity: 0, y: 18, letterSpacing: "8px" }}
-            animate={{ opacity: 1, y: 0, letterSpacing: "-2px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            initial={{
+              opacity: 0,
+              y: 18,
+              letterSpacing: "8px",
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              letterSpacing: "-2px",
+            }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+            }}
           >
             Kainat Moin
           </motion.span>
@@ -245,7 +314,11 @@ function App() {
             className="loader-line"
             initial={{ width: 0 }}
             animate={{ width: "80px" }}
-            transition={{ delay: 0.25, duration: 0.65, ease: "easeOut" }}
+            transition={{
+              delay: 0.25,
+              duration: 0.65,
+              ease: "easeOut",
+            }}
           />
         </motion.div>
       </motion.div>
@@ -260,7 +333,11 @@ function App() {
         className="navbar"
         initial={{ opacity: 0, y: -18 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.05, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        transition={{
+          delay: 1.05,
+          duration: 0.7,
+          ease: [0.16, 1, 0.3, 1],
+        }}
       >
         <a href="#home" className="logo">
           MY <span>PORTFOLIO.</span>
@@ -283,11 +360,18 @@ function App() {
       <section className="hero" id="home">
         <motion.div
           className="hero-image"
-          style={{ y: heroImageY, scale: heroImageScale }}
+          style={{
+            y: heroImageY,
+            scale: heroImageScale,
+          }}
           initial={{ opacity: 0, scale: 1.08 }}
           animate={{ opacity: 1, scale: 1.04 }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          transition={{
+            duration: 1.5,
+            ease: [0.16, 1, 0.3, 1],
+          }}
         />
+
         <motion.div
           className="hero-overlay"
           initial={{ opacity: 0 }}
@@ -297,10 +381,17 @@ function App() {
 
         <motion.div
           className="hero-content"
-          style={{ y: heroContentY, opacity: heroOpacity }}
+          style={{
+            y: heroContentY,
+            opacity: heroOpacity,
+          }}
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+          transition={{
+            duration: 0.9,
+            delay: 0.45,
+            ease: [0.16, 1, 0.3, 1],
+          }}
         >
           <p className="eyebrow hero-role">
             AI &amp; MACHINE LEARNING ENGINEER
@@ -380,8 +471,8 @@ function App() {
 
             <p>
               I enjoy taking real-world problems and turning them into
-              data-driven solutions through experimentation, research and
-              continuous learning.
+              data-driven solutions through experimentation, research
+              and continuous learning.
             </p>
           </div>
         </div>
@@ -398,8 +489,8 @@ function App() {
           </h2>
 
           <p className="section-intro">
-            A combination of AI knowledge, development skills and practical
-            problem solving.
+            A combination of AI knowledge, development skills and
+            practical problem solving.
           </p>
         </div>
 
@@ -435,8 +526,8 @@ function App() {
             <h3>Python</h3>
 
             <p>
-              Python development for AI, automation, machine learning and
-              data-driven applications.
+              Python development for AI, automation, machine learning
+              and data-driven applications.
             </p>
           </div>
 
@@ -447,8 +538,8 @@ function App() {
             <h3>Deep Learning</h3>
 
             <p>
-              TensorFlow, Keras, CNN architectures, Transfer Learning and
-              TensorFlow Lite.
+              TensorFlow, Keras, CNN architectures, Transfer Learning
+              and TensorFlow Lite.
             </p>
           </div>
 
@@ -471,8 +562,8 @@ function App() {
             <h3>Web Development</h3>
 
             <p>
-              HTML, CSS, JavaScript, React, WordPress and AI-powered web
-              applications.
+              HTML, CSS, JavaScript, React, WordPress and AI-powered
+              web applications.
             </p>
           </div>
         </div>
@@ -505,7 +596,9 @@ function App() {
               key={project.number}
               onClick={() => setActiveProject(project)}
             >
-              <div className="project-number">{project.number}</div>
+              <div className="project-number">
+                {project.number}
+              </div>
 
               <div className="project-main">
                 <p className="eyebrow">{project.category}</p>
@@ -516,7 +609,9 @@ function App() {
                   {project.description}
                 </p>
 
-                <div className="project-tech">{project.tech}</div>
+                <div className="project-tech">
+                  {project.tech}
+                </div>
               </div>
 
               <div className="project-arrow">↗</div>
@@ -540,7 +635,10 @@ function App() {
             onClick={(event) => event.stopPropagation()}
             initial={{ opacity: 0, y: 35, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              duration: 0.45,
+              ease: [0.16, 1, 0.3, 1],
+            }}
           >
             <button
               className="modal-close"
@@ -608,8 +706,8 @@ function App() {
               <p className="company">Ads-Expert</p>
 
               <p>
-                Created data-driven SEO content to improve search rankings
-                and engagement.
+                Created data-driven SEO content to improve search
+                rankings and engagement.
               </p>
             </div>
           </div>
@@ -652,7 +750,8 @@ function App() {
               <h3>BS Artificial Intelligence</h3>
 
               <p>
-                Dawood University of Engineering &amp; Technology, Karachi
+                Dawood University of Engineering &amp; Technology,
+                Karachi
               </p>
 
               <p>Semester 7 · Current CGPA: 3.49</p>
@@ -679,7 +778,9 @@ function App() {
             <div>
               <h3>Matriculation</h3>
 
-              <p>Matriculation / Secondary School Education</p>
+              <p>
+                Matriculation / Secondary School Education
+              </p>
             </div>
           </div>
         </div>
@@ -715,6 +816,12 @@ function App() {
                   src={certificate.image}
                   alt={certificate.title}
                   loading="lazy"
+                  onError={(event) => {
+                    event.currentTarget.style.display = "none";
+                    event.currentTarget.parentElement.classList.add(
+                      "certificate-image-missing"
+                    );
+                  }}
                 />
               </div>
 
